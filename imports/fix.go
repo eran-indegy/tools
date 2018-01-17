@@ -41,19 +41,19 @@ var LocalPrefix string
 var importToGroup = []func(importPath string) (num int, ok bool){
 	func(importPath string) (num int, ok bool) {
 		if LocalPrefix != "" && strings.HasPrefix(importPath, LocalPrefix) {
-			return 3, true
+			return 1, true
 		}
 		return
 	},
 	func(importPath string) (num int, ok bool) {
 		if strings.HasPrefix(importPath, "appengine") {
-			return 2, true
+			return 3, true
 		}
 		return
 	},
 	func(importPath string) (num int, ok bool) {
 		if strings.Contains(importPath, ".") {
-			return 1, true
+			return 2, true
 		}
 		return
 	},
